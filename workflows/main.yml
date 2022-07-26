@@ -1,0 +1,17 @@
+name: Deploy
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: akhileshns/heroku-deploy@v3.12.11
+        with:
+          heroku_api_key: ${{secrets.a561b3f9-b26d-4cfe-8cba-bbd7d0651059}}
+          heroku_app_name: "immense-basin-73088"
+          heroku_email: "evelyntorress@gmail.com"
